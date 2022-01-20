@@ -27,7 +27,7 @@ public final class EnumTools {
 	 * @param search The name to search in the <code>enum</code>. Cannot be <code>null</code>
 	 * @return The first element of <code>T</code> which has the given name (ignoring case), or an empty <code>Optional</code> if no constant has this name
 	 */
-	public final static <T extends Enum<?>> Optional<T> searchEnum(Class<T> enumeration, String search) {
+	public static <T extends Enum<?>> Optional<T> searchEnum(Class<T> enumeration, String search) {
 		requireNonNull(enumeration, "The given enumeration class cannot be null");
 		requireNonNull(search, "The search string cannot be null");
 	    for (T each : enumeration.getEnumConstants()) {
@@ -50,7 +50,7 @@ public final class EnumTools {
 	 * @param stringEquivalence The equivalence relation with which to compare <code>search</code> with the enum constant names. Cannot be <code>null</code>
 	 * @return The first element of <code>T</code> which has the given name according to <code>stringEquivalence</code>, or an empty <code>Optional</code> if no constant has this name.
 	 */
-	public final static <T extends Enum<?>> Optional<T> searchEnum(Class<T> enumeration, String search, EquivalenceRelation<String> stringEquivalence) {
+	public static <T extends Enum<?>> Optional<T> searchEnum(Class<T> enumeration, String search, EquivalenceRelation<String> stringEquivalence) {
 		requireNonNull(enumeration, "The given enum class cannot be null");
 		requireNonNull(search, "The search string cannot be null");
 	    requireNonNull(stringEquivalence, "The given string equality test cannot be null");
@@ -71,7 +71,7 @@ public final class EnumTools {
 	 * @param condition The test to perform on the constant names of <code>T</code>. Cannot be <code>null</code>
 	 * @return The first element of <code>T</code> whose declare name matches <code>condition</code>, or an empty <code>Optional</code> if none do.
 	 */
-	public final static <T extends Enum<?>> Optional<T> searchEnum(Class<T> enumeration, Predicate<T> condition) {
+	public static <T extends Enum<?>> Optional<T> searchEnum(Class<T> enumeration, Predicate<T> condition) {
 		requireNonNull(enumeration, "The given enum class cannot be null");
 		requireNonNull(condition, "The given condition cannot be null");
 	    for (T each : enumeration.getEnumConstants()) {
